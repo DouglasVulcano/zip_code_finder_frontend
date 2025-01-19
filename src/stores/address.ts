@@ -10,13 +10,11 @@ export const useAddressStore = defineStore('address', {
     async fetchAddress(cep: string) {
       try {
         const response = await fetchAddressByCep(cep)
-        if (!response.ok) {
-          const errorResponse = await response.json()
-          this.errorMessage = errorResponse.message
-          throw new Error(`Erro na API: ${response.status} - ${response.statusText}`)
+        if ('ok' in response && !response.ok) this.errorMessage = response.message
+        else {
+          this.errorMessage = ''
+          this.address = response
         }
-        this.errorMessage = ''
-        this.address = await response.json()
       } catch (error) {
         console.error('Erro ao buscar endereço:', error)
         throw error

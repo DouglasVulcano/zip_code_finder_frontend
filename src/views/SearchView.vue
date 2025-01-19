@@ -23,7 +23,7 @@ const handleSearch = async () => {
 
 <template>
   <div class="search-page">
-    <h1>Busca de CEP</h1>
+    <h1>Buscar Endereço</h1>
 
     <div class="search-form">
       <input
@@ -51,6 +51,9 @@ const handleSearch = async () => {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+}
+.search-page h1 {
+  margin-bottom: 20px;
 }
 
 .search-form {

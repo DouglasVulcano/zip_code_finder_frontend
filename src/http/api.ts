@@ -11,8 +11,20 @@ export class ApiService {
     this.adapter = adapter
   }
 
-  fetchConfig(method: string, path: string, body?: object) {
-    return this.adapter.request(method, path, body)
+  async fetchConfig(method: string, path: string, body?: object) {
+    const response = await this.adapter.request(method, path, body)
+    const responseData = await response.json()
+    /**
+     * TODO: Se for implementar um sistema de notificações global,
+     * deve ser feito aqui
+     */
+    if (!response.ok) {
+      return {
+        ok: false,
+        message: responseData.message,
+      }
+    }
+    return responseData
   }
 }
 
