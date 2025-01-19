@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import ContainerComponent from '../components/ContainerComponent.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <main>
-    <ContainerComponent>
-      <h1>This is an home page</h1>
-    </ContainerComponent>
+    <h1>This is an search page</h1>
   </main>
 </template>
