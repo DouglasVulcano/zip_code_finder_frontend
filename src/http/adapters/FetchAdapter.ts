@@ -1,6 +1,6 @@
-import type { ApiAdapter } from './ApiAdapter'
+import type { ApiAdapterInterface } from './ApiAdapterInterface'
 
-export class FetchAdapter implements ApiAdapter {
+export class FetchAdapter implements ApiAdapterInterface {
   private baseUrl: string
 
   constructor(baseUrl: string) {

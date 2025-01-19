@@ -1,13 +1,13 @@
-import type { ApiAdapter } from './adapters/ApiAdapter'
+import type { ApiAdapterInterface } from './adapters/ApiAdapterInterface'
 import { FetchAdapter } from './adapters/FetchAdapter'
 
 // TODO: get this from env
 export const BASE_URL = 'http://localhost/api'
 
 export class ApiService {
-  private adapter: ApiAdapter
+  private adapter: ApiAdapterInterface
 
-  constructor(adapter: ApiAdapter) {
+  constructor(adapter: ApiAdapterInterface) {
     this.adapter = adapter
   }
 
