@@ -14,7 +14,7 @@ const loading = ref(false)
 
 const handleSearch = async () => {
   if (!cep.value) {
-    errorMessage.value = 'CEP obrigatório'
+    errorMessage.value = 'CEP obrigatório.'
     return
   }
 
