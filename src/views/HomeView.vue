@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import NavigateBtnComponent from '../components/NavigateBtnComponent.vue'
+</script>
+
 <template>
   <div class="home">
     <img src="../../public/zipcode_finder.png" alt="Logo" class="logo" />
@@ -8,7 +12,7 @@
         Utilize nossa ferramenta de busca para encontrar rapidamente as informações que você
         precisa.
       </p>
-      <router-link to="/search" class="search-btn"> Ir para Busca </router-link>
+      <NavigateBtnComponent label="Ir para Busca" to="/search" />
     </div>
   </div>
 </template>
@@ -26,7 +30,7 @@
 
 .search-btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px 20px;
   background-color: #42b883;
   color: #fff;

@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import NavigateBtnComponent from '../components/NavigateBtnComponent.vue'
 import AddressComponent from '../components/AddressComponent.vue'
 import { useAddressStore } from '../stores/address'
+import { MaskInput } from 'vue-3-mask'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
@@ -11,6 +13,11 @@ const cep = ref('')
 const loading = ref(false)
 
 const handleSearch = async () => {
+  if (!cep.value) {
+    errorMessage.value = 'CEP obrigatório'
+    return
+  }
+
   loading.value = true
   try {
     await store.fetchAddress(cep.value)
@@ -26,8 +33,9 @@ const handleSearch = async () => {
     <h1>Buscar Endereço</h1>
 
     <div class="search-form">
-      <input
+      <MaskInput
         v-model="cep"
+        mask="#####-###"
         type="text"
         placeholder="Digite o CEP"
         maxlength="9"
@@ -42,7 +50,14 @@ const handleSearch = async () => {
       {{ errorMessage }}
     </div>
 
-    <AddressComponent v-if="Object.values(address).length" :address="address" />
+    <div v-if="Object.values(address).length">
+      <div style="text-align: left; margin-bottom: 20px">
+        <h3>Última pesquisa:</h3>
+      </div>
+      <AddressComponent :address="address" />
+    </div>
+
+    <NavigateBtnComponent label="Ir para Home" to="/" />
   </div>
 </template>
 
@@ -91,5 +106,16 @@ button:disabled {
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 20px;
+}
+
+.home-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #42b883;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 15px;
+  text-transform: uppercase;
 }
 </style>
