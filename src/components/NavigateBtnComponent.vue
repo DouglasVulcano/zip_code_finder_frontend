@@ -27,7 +27,7 @@ defineProps({
   background-color: #42b883;
   color: #fff;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 5px;
   text-transform: uppercase;
 }
 </style>

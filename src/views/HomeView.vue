@@ -20,22 +20,12 @@ import NavigateBtnComponent from '../components/NavigateBtnComponent.vue'
 <style scoped>
 .logo {
   width: 180px;
+  padding: 20px;
 }
 
 .description {
   margin-top: 10px;
   font-size: 14px;
   text-align: justify;
-}
-
-.search-btn {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 10px 20px;
-  background-color: #42b883;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 15px;
-  text-transform: uppercase;
 }
 </style>

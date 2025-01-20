@@ -4,7 +4,7 @@ import AddressComponent from '../components/AddressComponent.vue'
 import { useAddressStore } from '../stores/address'
 import { MaskInput } from 'vue-3-mask'
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const store = useAddressStore()
 const { address, errorMessage } = storeToRefs(store)
@@ -26,6 +26,11 @@ const handleSearch = async () => {
     loading.value = false
   }
 }
+
+onMounted(() => {
+  cep.value = ''
+  errorMessage.value = ''
+})
 </script>
 
 <template>
@@ -106,16 +111,5 @@ button:disabled {
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 20px;
-}
-
-.home-btn {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 10px 20px;
-  background-color: #42b883;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 15px;
-  text-transform: uppercase;
 }
 </style>
