@@ -1,39 +1,35 @@
-# zip_code_finder_frontent
+# Zip Code Finder - Aplicação frontend para busca de endereços
 
-This template should help get you started developing with Vue 3 in Vite.
+Bem-vindo ao Zip Code Finder, uma aplicação frontend para consulta de endereços por CEP.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Como executar o projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilar e recarregar automaticamente para desenvolvimento
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Verificar tipos, compilar e minificar para produção
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Analisar código com o [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+### Subir o projeto no ambiente Docker
+
+```sh
+docker-compose up -d --build
+```
+
+- Com isso basta acessar a rota **http://localhost:3000/**

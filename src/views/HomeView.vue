@@ -4,7 +4,7 @@ import NavigateBtnComponent from '../components/NavigateBtnComponent.vue'
 
 <template>
   <div class="home">
-    <img src="../../public/zipcode_finder.png" alt="Logo" class="logo" />
+    <img src="/zipcode_finder.png" alt="Logo" class="logo" />
     <div>
       <h1>Bem-vindo ao Zip Code Finder</h1>
       <p class="description">
